@@ -1,0 +1,94 @@
+# ------------------------------
+# OS / Editor
+# ------------------------------
+.DS_Store
+Thumbs.db
+Desktop.ini
+.vscode/*
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
+!.vscode/extensions.json
+
+# ------------------------------
+# Environment / Secrets
+# ------------------------------
+.env
+.env.*
+!.env.example
+!.env.sample
+
+# ------------------------------
+# Logs / Temporary files
+# ------------------------------
+*.log
+logs/
+tmp/
+temp/
+*.tmp
+
+# ------------------------------
+# Python / Flask
+# ------------------------------
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Virtual environments
+.venv/
+venv/
+env/
+ENV/
+
+# Python build/test/cache artifacts
+.python-version
+.mypy_cache/
+.pytest_cache/
+.ruff_cache/
+.pyre/
+.hypothesis/
+.tox/
+.nox/
+.coverage
+.coverage.*
+htmlcov/
+dist/
+build/
+site/
+*.egg-info/
+.eggs/
+
+# Flask-specific
+instance/
+.flaskenv
+
+# ------------------------------
+# Frontend (HTML/CSS/JS)
+# ------------------------------
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# Frontend build outputs
+coverage/
+.cache/
+.parcel-cache/
+.next/
+.nuxt/
+.svelte-kit/
+out/
+
+# ------------------------------
+# Database (PostgreSQL)
+# ------------------------------
+# Local PostgreSQL data directories
+pgdata/
+postgres_data/
+
+# Dumps / backups
+*.sql
+*.dump
+*.backup
+
