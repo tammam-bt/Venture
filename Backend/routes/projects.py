@@ -1,8 +1,8 @@
 from flask import Blueprint, request, jsonify
 from models import db, Project, ProjectStatus, Transaction, TransactionType, TransactionStatus
 from flask_jwt_extended import jwt_required, get_jwt_identity
-from services.pdf_processor import extract_text
-from services.ai_engine import generate_score
+import os
+from services.ai_engine import evaluate_startup
 
 projects_bp = Blueprint('projects', __name__)
 
@@ -17,6 +17,7 @@ def submit_project():
     industry = request.form.get('industry')
     funding_amount = request.form.get('funding_amount')
     stage = request.form.get('stage')
+    project_type = request.form.get('project_type', 'Startup')
 
     if not all([title, company_name, industry, funding_amount, stage]):
         return jsonify({"error": "Missing required text fields"}), 400
@@ -37,12 +38,42 @@ def submit_project():
         "financials": financials_url
     }
 
-    # Call mock teammate APIs
-    pdf_result = extract_text(pitch_deck)
-    if pdf_result.get("status") != "success":
-        return jsonify({"error": "Failed to parse PDF"}), 500
-    
-    score_result = generate_score(pdf_result.get("text", ""))
+    # Save to disk temporarily
+    pitch_path = f"/tmp/{user_id}_pitch.pdf"
+    financials_path = f"/tmp/{user_id}_financials.pdf"
+    os.makedirs('/tmp', exist_ok=True)
+    pitch_deck.save(pitch_path)
+    financials.save(financials_path)
+
+    try:
+        # Call new teammate API
+        score_result = evaluate_startup(
+            company_name=company_name, 
+            project_type=project_type, 
+            sector=industry, 
+            stage=stage, 
+            funding_amount=funding_amount, 
+            pitch_path=pitch_path, 
+            financial_path=financials_path
+        )
+    except Exception as e:
+        # Fallback to mock data if AI fails (invalid PDF, missing API key, etc.)
+        import traceback
+        traceback.print_exc()
+        score_result = {
+            "viability": {"score": 20, "evidence": "N/A", "verdict": "Could not evaluate - AI pipeline error"},
+            "feasibility": {"score": 20, "evidence": "N/A", "verdict": "Could not evaluate - AI pipeline error"},
+            "impact": {"score": 20, "evidence": "N/A", "verdict": "Could not evaluate - AI pipeline error"},
+            "roi_financial_logic": {"score": 20, "evidence": "N/A", "verdict": "Could not evaluate - AI pipeline error"},
+            "total_score": 0,
+            "overall_summary": f"AI evaluation failed: {str(e)}. Project saved with placeholder scores.",
+            "biggest_red_flag": "AI evaluation could not be completed.",
+            "investor_recommendation": "PENDING REVIEW"
+        }
+    finally:
+        # Cleanup temp files
+        if os.path.exists(pitch_path): os.remove(pitch_path)
+        if os.path.exists(financials_path): os.remove(financials_path)
 
     # Save to database
     project = Project(
@@ -52,9 +83,9 @@ def submit_project():
         industry=industry,
         funding_amount=funding_amount,
         stage=stage,
-        summary=score_result.get("summary", ""),
+        summary=score_result.get("overall_summary", ""),
         score=score_result.get("total_score", 0),
-        eval_summary=str(score_result.get("breakdown", {})),
+        eval_summary=score_result,
         documents_json=documents_json,
         status=ProjectStatus.LISTED
     )

@@ -17,8 +17,9 @@ curl -X POST $SERVER/api/auth/register \
 echo -e "\n\n3. Logging in as Promoter..."
 TOKEN=$(curl -s -X POST $SERVER/api/auth/login \
      -H "Content-Type: application/json" \
-     -d '{"email": "test@promoter.com", "password": "password123"}' | grep -oP '"access_token":"\([^"]*\)' | cut -d '"' -f 4)
+     -d '{"email": "test@promoter.com", "password": "password123"}' | grep -o '"access_token": *"[^"]*"' | grep -o '"[^"]*"$' | tr -d '"')
 
+echo "Token format check: ${TOKEN:0:15}..."
 echo -e "\n\n4. Submitting Project (Promoter)..."
 # Create dummy files
 echo "dummy file" > pitch.pdf

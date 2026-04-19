@@ -35,7 +35,7 @@ class Project(db.Model):
     summary = db.Column(db.Text, nullable=True)
     documents_json = db.Column(JSONB, nullable=True)  # Stores {"pitch_deck": "url", "financials": "url"}
     score = db.Column(db.Integer, nullable=True)
-    eval_summary = db.Column(db.Text, nullable=True)
+    eval_summary = db.Column(JSONB, nullable=True)
     status = db.Column(db.Enum(ProjectStatus), default=ProjectStatus.PENDING)
     created_at = db.Column(db.DateTime, default=datetime.utcnow)
     

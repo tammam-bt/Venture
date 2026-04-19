@@ -6,3 +6,10 @@ supabase
 werkzeug
 flask-cors
 python-dotenv
+fastapi==0.136.0
+uvicorn==0.44.0
+groq==1.2.0
+python-multipart==0.0.26
+PyMuPDF==1.27.2.2
+pydantic==2.13.2
+httpx==0.28.1

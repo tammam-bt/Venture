@@ -16,7 +16,7 @@ def create_app():
     # Initialize extensions
     db.init_app(app)
     JWTManager(app)
-    CORS(app)
+    CORS(app, resources={r"/api/*": {"origins": "*"}}, supports_credentials=True)
 
     # Register blueprints
     app.register_blueprint(auth_bp, url_prefix='/api/auth')
