@@ -1,0 +1,248 @@
+<!DOCTYPE html><html class="light" lang="fr"><head>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
+<title>Aeon Slate | Financement IA</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;700;800&amp;family=Inter:wght@400;500;600&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "surface-dim": "#d2d9f4",
+                    "on-secondary": "#ffffff",
+                    "on-tertiary-fixed-variant": "#005236",
+                    "outline": "#76777d",
+                    "on-secondary-container": "#57657a",
+                    "on-surface": "#131b2e",
+                    "secondary-fixed-dim": "#b9c7df",
+                    "on-primary": "#ffffff",
+                    "primary-fixed-dim": "#b4c5ff",
+                    "tertiary-fixed": "#6ffbbe",
+                    "on-primary-fixed": "#00174b",
+                    "error-container": "#ffdad6",
+                    "surface-bright": "#faf8ff",
+                    "surface-container-low": "#f2f3ff",
+                    "outline-variant": "#c6c6cd",
+                    "on-error-container": "#93000a",
+                    "error": "#ba1a1a",
+                    "secondary": "#515f74",
+                    "background": "#faf8ff",
+                    "on-primary-fixed-variant": "#003ea8",
+                    "inverse-on-surface": "#eef0ff",
+                    "on-secondary-fixed-variant": "#3a485b",
+                    "surface-container-highest": "#dae2fd",
+                    "on-primary-container": "#497cff",
+                    "surface-variant": "#dae2fd",
+                    "surface-container-high": "#e2e7ff",
+                    "on-background": "#131b2e",
+                    "on-tertiary": "#ffffff",
+                    "tertiary-container": "#002113",
+                    "tertiary-fixed-dim": "#4edea3",
+                    "secondary-fixed": "#d5e3fc",
+                    "inverse-primary": "#b4c5ff",
+                    "on-surface-variant": "#45464d",
+                    "primary-fixed": "#dbe1ff",
+                    "tertiary": "#000000",
+                    "secondary-container": "#d5e3fc",
+                    "surface-container-lowest": "#ffffff",
+                    "surface-container": "#eaedff",
+                    "inverse-surface": "#283044",
+                    "on-secondary-fixed": "#0d1c2e",
+                    "primary-container": "#00174b",
+                    "surface-tint": "#0053db",
+                    "primary": "#000000",
+                    "on-tertiary-container": "#009668",
+                    "on-error": "#ffffff",
+                    "surface": "#faf8ff",
+                    "on-tertiary-fixed": "#002113"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.125rem",
+                    "lg": "0.25rem",
+                    "xl": "0.5rem",
+                    "full": "0.75rem"
+            },
+            "fontFamily": {
+                    "headline": ["Manrope"],
+                    "body": ["Inter"],
+                    "label": ["Inter"]
+            }
+          },
+        }
+      }
+    </script>
+<style>
+        body { font-family: 'Inter', sans-serif; }
+        h1, h2, h3, .headline { font-family: 'Manrope', sans-serif; }
+        .material-symbols-outlined { font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24; }
+        .glass-nav { backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px); }
+        /* Hide sections for simulation */
+        .hidden-state { display: none; }
+    </style>
+</head>
+<body class="bg-surface text-on-surface selection:bg-primary-fixed selection:text-on-primary-fixed" data-mode="connect">
+<!-- TopNavBar -->
+<nav class="fixed top-0 w-full z-50 bg-slate-50/70 backdrop-blur-xl transition-all duration-300">
+<div class="flex justify-between items-center px-8 py-4 max-w-7xl mx-auto w-full">
+<span class="text-2xl font-bold tracking-tight text-slate-950" style="">FundBridge</span>
+<div class="hidden md:flex items-center space-x-8">
+<a class="text-slate-950 font-semibold border-b-2 border-slate-950 pb-1 hover:text-slate-900 transition-colors duration-300" href="#" style="">Acceuil</a>
+<a class="text-slate-500 font-medium pb-1 hover:text-slate-900 transition-colors duration-300" href="#" style=""><br></a>
+<a class="text-slate-500 font-medium pb-1 hover:text-slate-900 transition-colors duration-300" href="#" style="">À propos</a>
+</div>
+<div class="flex items-center gap-4">
+<button class="text-sm font-medium text-slate-950 hover:opacity-80 transition-all" style="">Connexion</button>
+<button class="bg-primary text-on-primary px-5 py-2 rounded-md font-semibold text-sm hover:opacity-90 active:scale-95 transition-all" onclick="document.getElementById('auth-selector').scrollIntoView({behavior:'smooth'})" style="">Commencer</button>
+</div>
+</div>
+</nav>
+<main class="relative min-h-screen pt-24 overflow-hidden">
+<!-- Background Elements: Tonal Shifting -->
+<div class="absolute inset-0 -z-10 bg-surface">
+<div class="absolute top-0 left-1/4 w-[500px] h-[500px] bg-surface-container-highest rounded-full blur-[120px] opacity-40"></div>
+<div class="absolute bottom-0 right-1/4 w-[600px] h-[600px] bg-primary-fixed rounded-full blur-[150px] opacity-20"></div>
+</div>
+<!-- HERO SECTION -->
+<section class="max-w-7xl mx-auto px-8 py-20 lg:py-32 flex flex-col items-center text-center hidden-state" id="hero-view">
+<div class="mb-6">
+<span class="inline-flex items-center px-4 py-1.5 rounded-full bg-secondary-container text-on-secondary-fixed-variant text-xs font-bold tracking-widest uppercase" style="">
+                    Innovation 2026</span>
+</div>
+<h1 class="text-5xl lg:text-8xl font-extrabold tracking-tight text-primary max-w-5xl leading-[1.1] mb-8" style="">
+                L'avenir du financement propulsé par l'IA
+            </h1>
+<p class="text-xl lg:text-2xl text-secondary max-w-2xl font-light leading-relaxed mb-12" style="">
+                Connectez votre startup aux investisseurs idéaux grâce à notre algorithme de scoring intelligent.
+            </p>
+<div class="flex flex-col sm:flex-row gap-6 justify-center w-full max-w-md">
+<button class="bg-primary text-on-primary text-lg px-10 py-5 rounded-md font-bold hover:scale-[1.02] active:scale-95 transition-all shadow-xl shadow-primary/10" onclick="document.getElementById('auth-selector').scrollIntoView({behavior:'smooth'})" style="">
+                    Commencer
+                </button>
+</div>
+<!-- Bento Grid Preview -->
+<div class="mt-24 grid grid-cols-1 md:grid-cols-12 gap-6 w-full text-left">
+<div class="md:col-span-8 bg-surface-container-low p-8 rounded-xl relative overflow-hidden group">
+<div class="relative z-10">
+<span class="material-symbols-outlined text-surface-tint text-4xl mb-4" style="">analytics</span>
+<h3 class="text-2xl font-bold mb-2" style="">Scoring Algorithmique</h3>
+<p class="text-secondary max-w-md" style="">Analyse multicritère de vos performances financières et de marché en temps réel.</p>
+</div>
+<img class="absolute -right-20 -bottom-20 w-3/4 opacity-10 group-hover:opacity-20 transition-opacity" data-alt="close up of high tech futuristic user interface showing data visualizations and financial metrics with soft blue lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDTrE7fKiIG3FZ9e5q8_8LgMGeFt7eA59bZzmLKVgv36XmL91bHDB8Mn_M71d0nOqqCQE1xAgfazlRdEK-z5ujvd7Hn_wO_Je5NR-HUurADmS7Z2tSOWvv9KIgkr6QktSMuPUrr_L82ffzR94hanLWVceZBgsxJ9q3HUBxkVVuT9wc28SbesGCHNWxA3fxIZjg0WTZHm0gUBypruFMn3xlZ6w76r-fzA9mqx-cLdUNwiar3B_WR3pbm17CZQrms5HlhQt1R2GHC7hUj" style="">
+</div>
+<div class="md:col-span-4 bg-surface-container-highest p-8 rounded-xl flex flex-col justify-between">
+<div>
+<span class="material-symbols-outlined text-primary text-4xl mb-4" style="">handshake</span>
+<h3 class="text-2xl font-bold mb-2" style="">Matching Idéal</h3>
+<p class="text-secondary" style="">Seuls les investisseurs alignés sur votre vision sont sollicités.</p>
+</div>
+<div class="mt-8 flex -space-x-4">
+<div class="w-12 h-12 rounded-full border-4 border-surface-container-highest bg-slate-300 overflow-hidden">
+<img class="w-full h-full object-cover" data-alt="professional portrait of a venture capitalist in a modern office" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBDAHuYXadQXyshlgDcbtPNgcwlDfGk9-6G2FSZL2_7QBNuoWRR-w_ia1C3Uqazzr7fHQdhfhZbVVJpKhFRytWzkRV7gqQjhkpdGnQlFVuSuOy5WdEN_BRsJQ5Q0QnnQN9dv7jPxRB66lPikW5UNUOMZHUM6HOaB2Uw2vfcSLKm78iAscNWmdPKNjIDzQiZy4eeI1VijxA7gp0_H4PAGYvCJ6FdxH4TlCxZ17--6vw5nkApBCPZZNiBOj1Rne7Zi4hmqv6KmxeZ7Oo_" style="">
+</div>
+<div class="w-12 h-12 rounded-full border-4 border-surface-container-highest bg-slate-400 overflow-hidden">
+<img class="w-full h-full object-cover" data-alt="professional female executive smiling confidently" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDyrPWueewYIEEbdvDyTnC8hPT-Vi9TZBut-I4-JIHuNLj8RJ3cqzu9KsNoqhL0MtIBOW_RSZsmZ4gh7aexfrHdmrR4t-oAsj2N-SqtHNLaaDiiDmPfqw1DJebRnqBXMlmjO-K7a5E3Fm2Zrq9_TXbW1Dj8DCrmf620Vk12GzMlAj0NvF8uHVN9kGKb-TiVe4J_g3ySmATIbKxqY_qgzu34oF2T_Q549OEbC22e-FvHofjPmvtegEt1LqsIRkQrSNdQ0OU4ELRiaWxL" style="">
+</div>
+<div class="w-12 h-12 rounded-full border-4 border-surface-container-highest bg-slate-500 overflow-hidden">
+<img class="w-full h-full object-cover" data-alt="serious investment banker in minimalist architectural setting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAo_ZSJl1vQYXZfyJPDZI4qDvS4lxwtPw18UYTrY5sZFqZGB26hfc6b7dRrCIUpmxaIwNYRwMkvOYZdCXWKs3jAUFm9bubcXsGjom5fftkvKDxaYHXGGWNowoDkK2sbuEJjKEETHj05J5Bz_gkqGc4er41xGybO3PvO1LK4XKZiEjaFkC_gCuH15LYcArjLWwwQuIgj_vKUJsgIh8ji5ZhKC-GCcL0HHDtLrTgh3XmREOP3Z2e_GvXAGARTGZe2HrcTpj2BXVaY1Cty" style="">
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- AUTH SELECTOR (Hidden Initially) -->
+<section class="max-w-4xl mx-auto px-8 py-32 text-center animate-fade-in" id="auth-selector">
+<h2 class="text-4xl font-bold mb-12" style="">Rejoindre l'Atelier</h2>
+<div class="flex flex-col md:flex-row gap-6 justify-center">
+<button class="flex-1 bg-surface-container-highest p-8 rounded-xl border border-outline-variant/10 hover:bg-surface-container-high transition-all text-left group" onclick="document.getElementById('auth-selector').classList.add('hidden-state'); document.getElementById('login-view').classList.remove('hidden-state');" style="">
+<span class="material-symbols-outlined text-primary text-3xl mb-4 group-hover:scale-110 transition-transform" style="">login</span>
+<h3 class="text-xl font-bold block" style="">Se connecter</h3>
+<p class="text-secondary text-sm" style="">Accédez à votre tableau de bord existant.</p>
+</button>
+<button class="flex-1 bg-primary p-8 rounded-xl hover:opacity-90 transition-all text-left group" onclick="document.getElementById('auth-selector').classList.add('hidden-state'); document.getElementById('signup-view').classList.remove('hidden-state');" style="">
+<span class="material-symbols-outlined text-on-primary text-3xl mb-4 group-hover:scale-110 transition-transform" style="">person_add</span>
+<h3 class="text-xl font-bold text-on-primary block" style="">S'inscrire</h3>
+<p class="text-on-primary/70 text-sm" style="">Créez votre profil startup dès aujourd'hui.</p>
+</button>
+</div>
+<button class="mt-12 text-secondary flex items-center justify-center gap-2 mx-auto hover:text-primary transition-colors" onclick="window.scrollTo({top:0,behavior:'smooth'});" style="">
+<span class="material-symbols-outlined text-sm" style="">arrow_back</span> Retour
+            </button>
+</section>
+<!-- SIGN UP VIEW -->
+<section class="hidden-state max-w-xl mx-auto px-8 py-32 animate-fade-in" id="signup-view">
+<div class="bg-surface-container-lowest p-10 rounded-2xl shadow-xl shadow-on-surface/5">
+<h2 class="text-3xl font-bold mb-8" style="">Nouveau Profil</h2>
+<form class="space-y-6" onsubmit="return false;">
+<div class="space-y-2">
+<label class="text-sm font-semibold text-secondary ml-1" style="">Email</label>
+<input id="signup-email" class="w-full px-4 py-3 bg-surface-container-low border-none focus:ring-1 focus:ring-surface-tint rounded-md outline-none" placeholder="jean@startup.com" type="email">
+</div>
+<div class="space-y-2">
+<label class="text-sm font-semibold text-secondary ml-1" style="">Mot de passe</label>
+<input id="signup-password" class="w-full px-4 py-3 bg-surface-container-low border-none focus:ring-1 focus:ring-surface-tint rounded-md outline-none" placeholder="••••••••" type="password">
+</div>
+<div class="space-y-2">
+<label class="text-sm font-semibold text-secondary ml-1" style="">Rôle</label>
+<select id="signup-role" class="w-full px-4 py-3 bg-surface-container-low border-none focus:ring-1 focus:ring-surface-tint rounded-md outline-none text-on-surface">
+<option value="promoter">Promoteur (Startup)</option>
+<option value="investor">Investisseur</option>
+</select>
+</div>
+<div class="space-y-2">
+<label class="text-sm font-semibold text-secondary ml-1" style="">Téléphone</label>
+<input id="signup-phone" class="w-full px-4 py-3 bg-surface-container-low border-none focus:ring-1 focus:ring-surface-tint rounded-md outline-none" placeholder="+212 6XX XXX XXX" type="tel">
+</div>
+<div class="space-y-2">
+<label class="text-sm font-semibold text-secondary ml-1" style="">WhatsApp</label>
+<input id="signup-whatsapp" class="w-full px-4 py-3 bg-surface-container-low border-none focus:ring-1 focus:ring-surface-tint rounded-md outline-none" placeholder="+212 6XX XXX XXX" type="tel">
+</div>
+<div class="pt-4 flex flex-col gap-4">
+<button id="signup-submit-btn" type="button" class="w-full bg-primary text-on-primary py-4 rounded-md font-bold hover:opacity-90 active:scale-95 transition-all" style="">S'inscrire</button>
+<button class="w-full py-2 text-secondary font-medium hover:text-primary transition-colors" onclick="document.getElementById('signup-view').classList.add('hidden-state'); document.getElementById('auth-selector').classList.remove('hidden-state');" style="">Retour</button>
+</div>
+</form>
+</div>
+</section>
+<!-- LOGIN VIEW -->
+<section class="hidden-state max-w-xl mx-auto px-8 py-32 animate-fade-in" id="login-view">
+<div class="bg-surface-container-lowest p-10 rounded-2xl shadow-xl shadow-on-surface/5">
+<h2 class="text-3xl font-bold mb-8" style="">Accès Investisseur</h2>
+<form class="space-y-6" onsubmit="return false;">
+<div class="space-y-2">
+<label class="text-sm font-semibold text-secondary ml-1" style="">Email</label>
+<input id="login-email" class="w-full px-4 py-3 bg-surface-container-low border-none focus:ring-1 focus:ring-surface-tint rounded-md outline-none" placeholder="invest@atelier.ai" type="email">
+</div>
+<div class="space-y-2">
+<label class="text-sm font-semibold text-secondary ml-1" style="">Mot de passe</label>
+<input id="login-password" class="w-full px-4 py-3 bg-surface-container-low border-none focus:ring-1 focus:ring-surface-tint rounded-md outline-none" placeholder="••••••••" type="password">
+</div>
+<div class="pt-4 flex flex-col gap-4">
+<button id="login-submit-btn" type="button" class="w-full bg-primary text-on-primary py-4 rounded-md font-bold hover:opacity-90 active:scale-95 transition-all" style="">Se connecter</button>
+<button class="w-full py-2 text-secondary font-medium hover:text-primary transition-colors" onclick="document.getElementById('login-view').classList.add('hidden-state'); document.getElementById('auth-selector').classList.remove('hidden-state');" style="">Retour</button>
+</div>
+</form>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="w-full py-12 px-8 bg-slate-50">
+<div class="flex flex-col md:flex-row justify-between items-center gap-6 max-w-7xl mx-auto">
+<div class="flex flex-col gap-2">
+<span class="text-lg font-black text-slate-900" style="">Aeon Slate</span>
+<p class="text-slate-500 text-sm font-medium tracking-wide" style="">© 2026 Algorithmic Atel. Tous droits réservés.</p>
+</div>
+<div class="flex gap-8">
+<a class="text-sm font-medium text-slate-500 hover:text-slate-900 hover:underline underline-offset-4 transition-all" href="#" style="">Confidentialité</a>
+<a class="text-sm font-medium text-slate-500 hover:text-slate-900 hover:underline underline-offset-4 transition-all" href="#" style="">Conditions</a>
+<a class="text-sm font-medium text-slate-500 hover:text-slate-900 hover:underline underline-offset-4 transition-all" href="#" style="">Contact</a>
+<a class="text-sm font-medium text-slate-500 hover:text-slate-900 hover:underline underline-offset-4 transition-all" href="#" style="">Documentation</a>
+</div>
+</div>
+</footer>
+<script src="../js/api.js"></script>
+<script src="../js/auth.js"></script>
+</body></html>

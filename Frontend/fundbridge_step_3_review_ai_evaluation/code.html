@@ -1,0 +1,320 @@
+<!DOCTYPE html><html class="light" lang="en"><head>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
+<title>Review &amp; Submit | Aeon Slate</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&amp;family=Manrope:wght@700;800&amp;family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .ambient-lift {
+            box-shadow: 0px 24px 48px -12px rgba(19, 27, 46, 0.06);
+        }
+        .no-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+    </style>
+<script id="tailwind-config">
+        tailwind.config = {
+          darkMode: "class",
+          theme: {
+            extend: {
+              "colors": {
+                "surface-dim": "#d2d9f4",
+                "secondary-container": "#d5e3fc",
+                "surface-bright": "#faf8ff",
+                "surface": "#faf8ff",
+                "on-surface": "#131b2e",
+                "on-primary-fixed-variant": "#003ea8",
+                "on-secondary-fixed": "#0d1c2e",
+                "on-background": "#131b2e",
+                "on-primary-fixed": "#00174b",
+                "primary-fixed": "#dbe1ff",
+                "on-tertiary-container": "#009668",
+                "tertiary-fixed": "#6ffbbe",
+                "inverse-surface": "#283044",
+                "on-tertiary": "#ffffff",
+                "surface-variant": "#dae2fd",
+                "on-primary": "#ffffff",
+                "on-tertiary-fixed-variant": "#005236",
+                "tertiary": "#000000",
+                "surface-container-lowest": "#ffffff",
+                "on-primary-container": "#497cff",
+                "error": "#ba1a1a",
+                "primary-container": "#00174b",
+                "on-secondary-container": "#57657a",
+                "secondary": "#515f74",
+                "primary": "#000000",
+                "tertiary-container": "#002113",
+                "secondary-fixed": "#d5e3fc",
+                "inverse-on-surface": "#eef0ff",
+                "error-container": "#ffdad6",
+                "surface-tint": "#0053db",
+                "on-surface-variant": "#45464d",
+                "on-secondary-fixed-variant": "#3a485b",
+                "tertiary-fixed-dim": "#4edea3",
+                "on-error-container": "#93000a",
+                "on-tertiary-fixed": "#002113",
+                "primary-fixed-dim": "#b4c5ff",
+                "outline": "#76777d",
+                "surface-container": "#eaedff",
+                "secondary-fixed-dim": "#b9c7df",
+                "inverse-primary": "#b4c5ff",
+                "on-secondary": "#ffffff",
+                "background": "#faf8ff",
+                "surface-container-low": "#f2f3ff",
+                "surface-container-high": "#e2e7ff",
+                "outline-variant": "#c6c6cd",
+                "surface-container-highest": "#dae2fd",
+                "on-error": "#ffffff"
+              },
+              "borderRadius": {
+                "DEFAULT": "0.125rem",
+                "lg": "0.25rem",
+                "xl": "0.5rem",
+                "full": "0.75rem"
+              },
+              "fontFamily": {
+                "headline": ["Manrope"],
+                "body": ["Inter"],
+                "label": ["Inter"]
+              }
+            },
+          },
+        }
+    </script>
+</head>
+<body class="bg-surface font-body text-on-surface antialiased no-scrollbar">
+<!-- TopNavBar: Glassmorphism Navigation Shell -->
+<nav class="bg-slate-50/70 dark:bg-slate-900/70 backdrop-blur-md text-slate-950 dark:text-slate-50 docked full-width top-0 sticky z-50 shadow-sm dark:shadow-none">
+<div class="flex justify-between items-center w-full px-8 py-4 max-w-[1440px] mx-auto">
+<div class="text-xl font-black tracking-tighter text-slate-900 dark:text-white font-headline" style="">FundBridge</div>
+<div class="hidden md:flex items-center space-x-8">
+<a class="text-slate-500 dark:text-slate-400 font-medium hover:text-slate-700 transition-colors" href="#" style="">Dashboard</a>
+<a class="text-slate-500 dark:text-slate-400 font-medium hover:text-slate-700 transition-colors" href="#" style="">Portfolio</a>
+<a class="text-slate-900 dark:text-white border-b-2 border-slate-900 dark:border-white pb-1 font-medium" href="#" style="">Ventures</a>
+<a class="text-slate-500 dark:text-slate-400 font-medium hover:text-slate-700 transition-colors" href="#" style="">Analytics</a>
+</div>
+<div class="flex items-center space-x-4">
+<button class="material-symbols-outlined p-2 hover:bg-slate-100/50 dark:hover:bg-slate-800/50 transition-all rounded-full" style="">notifications</button>
+<button class="material-symbols-outlined p-2 hover:bg-slate-100/50 dark:hover:bg-slate-800/50 transition-all rounded-full" style="">account_circle</button>
+</div>
+</div>
+</nav>
+<main class="max-w-[1440px] mx-auto px-8 py-12"><div class="mb-8"><a class="inline-flex items-center gap-2 text-sm font-bold text-secondary hover:text-primary transition-colors" href="../fundbridge_step_2_documents/code.html" style=""><span class="material-symbols-outlined text-sm" style="">arrow_back_ios</span> Back to Step 2</a></div>
+<!-- Progress Indicator -->
+<div class="mb-12">
+<div class="flex items-center gap-4 mb-4">
+<span class="text-secondary text-xs font-semibold uppercase tracking-widest font-label" style="">STEP 3 OF 3 — FINAL REVIEW</span>
+</div>
+<div class="h-1.5 w-full bg-surface-container-high rounded-full overflow-hidden">
+<div class="h-full w-full bg-primary-container transition-all duration-1000"></div>
+</div>
+</div>
+<!-- Page Header -->
+<header class="mb-16">
+<h1 class="text-5xl font-bold tracking-tight font-headline text-on-surface mb-2" style="">Review &amp; Submit</h1>
+<p class="text-secondary max-w-2xl" style="">Confirm your project details and review the algorithmic assessment before final submission to our venture pool.</p>
+</header>
+<div class="flex flex-col lg:flex-row gap-12 items-start">
+<!-- LEFT COLUMN: Project Details & AI Insights -->
+<div class="w-full lg:w-[65%] space-y-12">
+<!-- Project Summary Card -->
+<section class="bg-surface-container-low p-10 rounded-xl transition-all">
+<div class="flex justify-between items-start mb-8">
+<div>
+<h2 class="text-2xl font-bold font-headline mb-4" style="">Project Identity</h2>
+<div class="flex flex-wrap gap-2 mb-6">
+<span id="review-industry-tag" class="bg-surface-variant text-on-primary-fixed px-3 py-1 rounded-full text-xs font-semibold uppercase tracking-wider font-label" style="">FinTech</span>
+<span class="bg-surface-variant text-on-primary-fixed px-3 py-1 rounded-full text-xs font-semibold uppercase tracking-wider font-label" style="">B2B SaaS</span>
+<span class="bg-surface-variant text-on-primary-fixed px-3 py-1 rounded-full text-xs font-semibold uppercase tracking-wider font-label" style="">AI Integrated</span>
+</div>
+</div>
+<a class="text-on-primary-container text-sm font-semibold flex items-center gap-1 hover:underline" href="#" style="">
+<span class="material-symbols-outlined text-sm" style="">edit</span> Edit
+                        </a>
+</div>
+<div class="space-y-6">
+<div>
+<p class="text-sm font-label text-secondary uppercase tracking-widest mb-1" style="">Company Name</p>
+<p id="review-company-name" class="text-lg font-semibold" style="">Loading…</p>
+</div>
+<div>
+<p class="text-sm font-label text-secondary uppercase tracking-widest mb-1" style="">Tagline</p>
+<p class="text-lg italic text-on-surface-variant" style="">"Algorithmic reconciliation for the modern enterprise stack."</p>
+</div>
+<div>
+<p class="text-sm font-label text-secondary uppercase tracking-widest mb-1" style="">Description</p>
+<p id="review-description" class="text-on-surface-variant leading-relaxed" style="">Loading project description…</p>
+</div>
+</div>
+</section>
+<!-- Documents Card -->
+<section class="bg-surface-container-low p-10 rounded-xl">
+<div class="flex justify-between items-center mb-8">
+<h2 class="text-2xl font-bold font-headline" style="">Documentation</h2>
+<a class="text-on-primary-container text-sm font-semibold flex items-center gap-1 hover:underline" href="#" style="">
+<span class="material-symbols-outlined text-sm" style="">upload_file</span> Update
+                        </a>
+</div>
+<div class="grid gap-4">
+<div class="flex items-center justify-between p-4 bg-surface rounded-lg">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-primary" style="">description</span>
+<span class="font-medium" style="">Pitch Deck</span>
+</div>
+<span class="bg-tertiary-container text-tertiary-fixed-dim px-3 py-1 rounded-md text-xs font-bold uppercase" style="">Uploaded ✓</span>
+</div>
+<div class="flex items-center justify-between p-4 bg-surface rounded-lg">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-primary" style="">analytics</span>
+<span class="font-medium" style="">Financial Model</span>
+</div>
+<span class="bg-tertiary-container text-tertiary-fixed-dim px-3 py-1 rounded-md text-xs font-bold uppercase" style="">Uploaded ✓</span>
+</div>
+<div class="flex items-center justify-between p-4 bg-surface rounded-lg opacity-60">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-secondary" style="">info</span>
+<span class="font-medium" style="">Executive Summary</span>
+</div>
+<span class="text-secondary text-xs font-medium italic" style="">Optional — Not uploaded</span>
+</div>
+<div class="flex items-center justify-between p-4 bg-surface rounded-lg opacity-60">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-secondary" style="">assignment</span>
+<span class="font-medium" style="">Market Strategy Plan</span>
+</div>
+<span class="text-secondary text-xs font-medium italic" style="">Optional — Not uploaded</span>
+</div>
+</div>
+</section>
+<!-- AI EVALUATION RESULTS CARD -->
+<section class="bg-tertiary-container p-10 rounded-xl relative overflow-hidden">
+<div class="mb-10">
+<h3 class="text-tertiary-fixed-dim font-bold tracking-widest text-xs uppercase mb-2 font-label" style="">AI EVALUATION COMPLETE</h3>
+<p class="text-white text-xl font-headline opacity-90" style="">Your project has been automatically scored based on market benchmarks and historical funding patterns.</p>
+</div>
+<div class="flex flex-col md:flex-row gap-12 items-center mb-10">
+<!-- Score Visualization -->
+<div class="relative flex items-center justify-center">
+<svg class="w-48 h-48 transform -rotate-90">
+<circle cx="96" cy="96" fill="transparent" r="88" stroke="rgba(255,255,255,0.05)" stroke-width="8"></circle>
+<circle cx="96" cy="96" fill="transparent" r="88" stroke="#4edea3" stroke-dasharray="552.92" stroke-dashoffset="143.76" stroke-width="8"></circle>
+</svg>
+<div class="absolute inset-0 flex flex-col items-center justify-center">
+<span id="review-total-score" class="text-5xl font-extrabold font-headline text-white tracking-tighter" style="">-- <span class="text-xl text-tertiary-fixed-dim" style="">/ 100</span></span>
+</div>
+</div>
+<div class="flex-1 space-y-6">
+<div class="flex items-center gap-4">
+<span id="review-recommendation" class="bg-on-primary-container text-white px-4 py-1.5 rounded-full text-xs font-bold tracking-widest uppercase" style="">PENDING</span>
+<div id="review-benchmark" class="flex items-center gap-1.5">
+<span class="text-white font-bold" style="">...</span>
+<span class="text-tertiary-fixed-dim text-sm" style="">calculating</span>
+</div>
+</div>
+<p id="review-ai-summary" class="text-white/80 leading-relaxed italic" style="">"Loading AI analysis…"</p>
+</div>
+</div>
+<!-- Pillar Scores -->
+<!-- Red Flag Card -->
+<div class="bg-surface-container-lowest/10 border-l-[3px] border-[#ff4444] p-6 rounded-r-lg">
+<h4 class="text-[#ff4444] text-[11px] font-black tracking-widest uppercase mb-2" style="">⚠ BIGGEST RED FLAG</h4>
+<p id="review-red-flag" class="text-white/90 text-sm font-medium" style="">Analyzing…</p>
+</div>
+</section>
+<!-- Funding Details Card -->
+<section class="bg-surface-container-low p-10 rounded-xl grid grid-cols-1 md:grid-cols-2 gap-12">
+<div>
+<h3 class="text-sm font-label text-secondary uppercase tracking-widest mb-4" style="">FUNDING REQUEST</h3>
+<p id="review-funding" class="text-5xl font-black font-headline tracking-tighter text-on-surface" style="">…</p>
+</div>
+<div>
+<h3 class="text-sm font-label text-secondary uppercase tracking-widest mb-4" style="">TARGET STAGE</h3>
+<p id="review-stage" class="text-5xl font-black font-headline tracking-tighter text-on-surface" style="">…</p>
+</div>
+</section>
+</div>
+<!-- RIGHT COLUMN: Payment & Sticky Summary -->
+<aside class="w-full lg:w-[35%] space-y-8 lg:sticky lg:top-28">
+<!-- Payment Card -->
+<section class="bg-surface-container-low p-8 rounded-xl ambient-lift">
+<h3 class="text-xl font-bold font-headline mb-6" style="">Finalize Submission</h3>
+<div class="space-y-4 mb-8">
+<div class="flex justify-between text-sm">
+<span class="text-secondary" style="">Submission Fee</span>
+<span class="font-medium" style="">$49.00</span>
+</div>
+<div class="flex justify-between text-sm">
+<span class="text-secondary" style="">Priority AI Processing</span>
+<span class="text-on-tertiary-container font-medium" style="">Included</span>
+</div>
+<div class="pt-4 border-t border-outline-variant/30 flex justify-between">
+<span class="font-bold" style="">Total Due</span>
+<span class="font-bold text-xl" style="">$49.00</span>
+</div>
+</div>
+<form class="space-y-4">
+<div class="space-y-1.5">
+<label class="text-[10px] font-bold text-secondary uppercase tracking-wider" style="">Card Number</label>
+<input class="w-full bg-surface-container-lowest border-none focus:ring-1 focus:ring-surface-tint rounded-md p-3 text-sm placeholder:text-outline/50" placeholder="0000 0000 0000 0000" type="text">
+</div>
+<div class="grid grid-cols-2 gap-4">
+<div class="space-y-1.5">
+<label class="text-[10px] font-bold text-secondary uppercase tracking-wider" style="">Expiry</label>
+<input class="w-full bg-surface-container-lowest border-none focus:ring-1 focus:ring-surface-tint rounded-md p-3 text-sm placeholder:text-outline/50" placeholder="MM/YY" type="text">
+</div>
+<div class="space-y-1.5">
+<label class="text-[10px] font-bold text-secondary uppercase tracking-wider" style="">CVV</label>
+<input class="w-full bg-surface-container-lowest border-none focus:ring-1 focus:ring-surface-tint rounded-md p-3 text-sm placeholder:text-outline/50" placeholder="123" type="text">
+</div>
+</div>
+<div class="space-y-1.5 mb-6">
+<label class="text-[10px] font-bold text-secondary uppercase tracking-wider" style="">Cardholder Name</label>
+<input class="w-full bg-surface-container-lowest border-none focus:ring-1 focus:ring-surface-tint rounded-md p-3 text-sm placeholder:text-outline/50" placeholder="John Doe" type="text">
+</div>
+<button id="pay-submit-btn" class="w-full bg-primary text-on-primary font-bold py-4 rounded-md transition-all active:scale-95 hover:opacity-90" type="button" style="">
+                            Submit & Pay $49
+                        </button>
+</form>
+<p class="text-[10px] text-center text-secondary mt-6 uppercase tracking-widest font-medium" style="">Secure Encrypted Transaction</p>
+</section>
+<!-- AI Score Mini Summary -->
+<section class="bg-tertiary-container p-8 rounded-xl text-white">
+<div class="flex items-center justify-between mb-4">
+<span class="text-[10px] font-bold uppercase tracking-widest text-white/50" style="">AI Score Lock</span>
+<span class="bg-on-primary-container px-2 py-0.5 rounded text-[10px] font-bold tracking-widest uppercase" style="">CONSIDER</span>
+</div>
+<div class="flex items-baseline gap-2 mb-4">
+<span id="review-mini-score" class="text-4xl font-black font-headline" style="">--</span>
+<span class="text-sm text-white/50" style="">/ 100</span>
+</div>
+<div class="flex items-center gap-2 text-xs text-tertiary-fixed-dim">
+<span class="material-symbols-outlined text-sm" style="">visibility</span>
+<span class="" style="">Investors will see this score</span>
+</div>
+</section>
+<div class="p-6 bg-surface-container p-6 rounded-xl flex items-start gap-4">
+<span class="material-symbols-outlined text-primary-container" style="">info</span>
+<p class="text-xs text-on-secondary-container leading-relaxed font-medium" style="">Once submitted, project details can only be edited after 14 days or by investor request.</p>
+</div>
+</aside>
+</div>
+</main>
+<footer class="mt-20 py-12 px-8 bg-surface-container-low">
+<div class="max-w-[1440px] mx-auto flex flex-col md:flex-row justify-between items-center gap-8">
+<div class="text-lg font-black tracking-tighter text-slate-900 font-headline" style="">Aeon Slate</div>
+<div class="flex gap-8 text-xs font-semibold uppercase tracking-widest text-secondary">
+<a class="hover:text-primary" href="#" style="">Terms</a>
+<a class="hover:text-primary" href="#" style="">Privacy</a>
+<a class="hover:text-primary" href="#" style="">Security</a>
+<a class="hover:text-primary" href="#" style="">Support</a>
+</div>
+<p class="text-xs text-secondary" style="">© 2024 Aeon Slate Algorithmic Atelier. All rights reserved.</p>
+</div>
+</footer>
+<script src="../js/api.js"></script>
+<script src="../js/submit.js"></script>
+</body></html>

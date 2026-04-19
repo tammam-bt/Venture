@@ -1,0 +1,306 @@
+<!DOCTYPE html><html class="light" lang="fr"><head>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
+<title>Détails du Projet : NeuroSync Grid | Aeon Slate</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;700;800&amp;family=Inter:wght@300;400;500;600&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "outline-variant": "#c6c6cd",
+                        "error-container": "#ffdad6",
+                        "surface-container-high": "#e2e7ff",
+                        "on-surface-variant": "#45464d",
+                        "surface-bright": "#faf8ff",
+                        "surface-container-low": "#f2f3ff",
+                        "primary": "#000000",
+                        "outline": "#76777d",
+                        "surface-container-lowest": "#ffffff",
+                        "surface-dim": "#d2d9f4",
+                        "on-secondary": "#ffffff",
+                        "secondary-fixed-dim": "#b9c7df",
+                        "on-primary-fixed": "#00174b",
+                        "on-surface": "#131b2e",
+                        "on-tertiary-fixed-variant": "#005236",
+                        "tertiary-fixed": "#6ffbbe",
+                        "on-tertiary-fixed": "#002113",
+                        "inverse-primary": "#b4c5ff",
+                        "inverse-surface": "#283044",
+                        "tertiary-fixed-dim": "#4edea3",
+                        "secondary-container": "#d5e3fc",
+                        "surface-variant": "#dae2fd",
+                        "surface-tint": "#0053db",
+                        "surface-container": "#eaedff",
+                        "on-primary-container": "#497cff",
+                        "tertiary-container": "#002113",
+                        "on-primary-fixed-variant": "#003ea8",
+                        "tertiary": "#000000",
+                        "on-error-container": "#93000a",
+                        "inverse-on-surface": "#eef0ff",
+                        "secondary": "#515f74",
+                        "on-secondary-container": "#57657a",
+                        "on-primary": "#ffffff",
+                        "surface": "#faf8ff",
+                        "on-secondary-fixed-variant": "#3a485b",
+                        "on-tertiary-container": "#009668",
+                        "on-error": "#ffffff",
+                        "surface-container-highest": "#dae2fd",
+                        "secondary-fixed": "#d5e3fc",
+                        "primary-fixed": "#dbe1ff",
+                        "on-tertiary": "#ffffff",
+                        "on-background": "#131b2e",
+                        "error": "#ba1a1a",
+                        "background": "#faf8ff",
+                        "on-secondary-fixed": "#0d1c2e",
+                        "primary-fixed-dim": "#b4c5ff",
+                        "primary-container": "#00174b"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.125rem",
+                        "lg": "0.25rem",
+                        "xl": "0.5rem",
+                        "full": "0.75rem"
+                    },
+                    "fontFamily": {
+                        "headline": ["Manrope"],
+                        "body": ["Inter"],
+                        "label": ["Inter"]
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+        body { font-family: 'Inter', sans-serif; }
+        h1, h2, h3 { font-family: 'Manrope', sans-serif; }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+    </style>
+</head>
+<body class="bg-surface text-on-surface" data-mode="connect">
+<!-- TopAppBar -->
+<header class="fixed top-0 left-0 right-0 z-40 bg-slate-50/70 dark:bg-slate-950/70 backdrop-blur-md shadow-[0px_24px_48px_-12px_rgba(19,27,46,0.06)]">
+<div class="flex justify-between items-center w-full px-8 h-16 max-w-[1920px] mx-auto">
+<div class="flex items-center gap-8">
+<span class="font-manrope font-black text-xl tracking-tighter text-slate-900 dark:text-white" style="">FundBridge<br><br></span>
+<nav class="hidden md:flex gap-6">
+<a class="text-slate-500 dark:text-slate-400 font-medium hover:text-slate-950 dark:hover:text-white transition-colors" href="#" style=""><br></a>
+<a class="text-slate-950 dark:text-white font-bold border-b-2 border-slate-950 dark:border-white pb-1" href="#" style="">Insights</a>
+<a class="text-slate-500 dark:text-slate-400 font-medium hover:text-slate-950 dark:hover:text-white transition-colors" href="#" style=""><br></a>
+</nav>
+</div>
+<div class="flex items-center gap-4">
+<a class="text-slate-500 dark:text-slate-400 font-medium hover:text-slate-950 dark:hover:text-white transition-colors flex items-center gap-2" href="../tableau_de_bord_investisseur_catalogue/code.html" style=""><span class="material-symbols-outlined text-[20px]" style="">arrow_back</span> Back to Catalog</a>
+<button id="invest-btn" class="bg-primary text-on-primary px-5 py-2 rounded-md font-bold text-sm hover:opacity-90 transition-all active:scale-[0.99]" style="">
+                    Invest Now
+                </button>
+</div>
+</div>
+</header>
+<!-- SideNavBar (Suppressed for focused detail view) -->
+<main class="pt-24 pb-20 px-4 md:px-12 max-w-[1400px] mx-auto">
+<!-- Header Section -->
+<section class="mb-12">
+<div class="flex flex-col md:flex-row md:items-end justify-between gap-6">
+<div>
+<span class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-secondary-container text-on-secondary-fixed-variant text-xs font-bold tracking-wider uppercase mb-4" style="">
+<span class="w-2 h-2 rounded-full bg-surface-tint"></span>
+                        Projet Actif
+                    </span>
+<h1 id="detail-title" class="text-5xl md:text-6xl font-black tracking-tight text-primary leading-tight" style="">
+                        Détails du Projet : <br>
+<span class="text-on-primary-container" style="">Loading…</span>
+</h1>
+</div>
+<div class="flex flex-col items-start md:items-end gap-2">
+<span class="text-secondary label-md uppercase tracking-widest font-bold" style="">AI Project Score</span>
+<div id="detail-score" class="text-5xl font-black text-primary flex items-baseline" style="">
+                        --<span class="text-2xl text-on-tertiary-container" style="">/100</span>
+</div>
+</div>
+</div>
+</section>
+<!-- Bento Grid Layout -->
+<div class="grid grid-cols-1 md:grid-cols-12 gap-8">
+<!-- 1. Project Overview (Large) -->
+<div class="md:col-span-8 space-y-8">
+<div class="bg-surface-container-lowest rounded-xl p-8 shadow-sm">
+<div class="flex items-center gap-3 mb-6">
+<span class="material-symbols-outlined text-on-primary-container" style="">hub</span>
+<h2 class="text-2xl font-bold tracking-tight" style="">Project Overview</h2>
+</div>
+<div class="prose prose-slate max-w-none">
+<p id="detail-summary" class="text-lg text-on-surface-variant leading-relaxed font-body" style="">
+                            Loading project details…
+                        </p>
+<div class="mt-6 grid grid-cols-1 sm:grid-cols-2 gap-6">
+<div class="bg-surface p-4 rounded-lg">
+<h4 class="text-sm font-bold text-secondary uppercase tracking-wider mb-2" style="">Core Innovation</h4>
+<p class="text-sm" style="">Proprietary "Sync-Tensor" protocol for sub-50ms latency across global clusters.</p>
+</div>
+<div class="bg-surface p-4 rounded-lg">
+<h4 class="text-sm font-bold text-secondary uppercase tracking-wider mb-2" style="">Target Market</h4>
+<p class="text-sm" style="">Enterprise R&amp;D labs, academic research institutions, and decentralized AI collectives.</p>
+</div>
+</div>
+</div>
+</div>
+<!-- 2. AI Market Intelligence -->
+<div class="bg-primary-container text-white rounded-xl p-8 overflow-hidden relative">
+<div class="absolute top-0 right-0 w-64 h-64 bg-on-primary-container opacity-10 rounded-full blur-3xl -mr-20 -mt-20"></div>
+<div class="relative z-10">
+<div class="flex items-center gap-3 mb-8">
+<span class="material-symbols-outlined text-secondary-fixed" style="">insights</span>
+<h2 class="text-2xl font-bold tracking-tight" style="">AI Market Intelligence</h2>
+</div>
+<div class="grid grid-cols-1 lg:grid-cols-2 gap-10">
+<div>
+<p class="text-secondary-fixed-dim text-sm leading-relaxed mb-6" style="">
+                                    Our AI analysis identifies NeuroSync Grid as a key player in the "Collaborative Intelligence" vertical, projected to grow at a CAGR of 34.2% through 2029.
+                                </p>
+<div class="space-y-4">
+<div class="flex items-center justify-between border-b border-white/10 pb-2">
+<span class="text-xs font-medium uppercase tracking-widest text-secondary-fixed-dim" style="">Market Saturation</span>
+<span class="text-sm font-bold" style="">Low (12%)</span>
+</div>
+<div class="flex items-center justify-between border-b border-white/10 pb-2">
+<span class="text-xs font-medium uppercase tracking-widest text-secondary-fixed-dim" style="">Competitive Advantage</span>
+<span class="text-sm font-bold text-tertiary-fixed-dim" style="">High (AI Verified)</span>
+</div>
+<div class="flex items-center justify-between border-b border-white/10 pb-2">
+<span class="text-xs font-medium uppercase tracking-widest text-secondary-fixed-dim" style="">Funding Momentum</span>
+<span class="text-sm font-bold" style="">+28% YoY</span>
+</div>
+</div>
+</div>
+<div class="flex flex-col justify-center items-center bg-white/5 rounded-lg p-6">
+<div class="relative w-32 h-32 mb-4">
+<svg class="w-full h-full -rotate-90" viewBox="0 0 36 36">
+<path class="stroke-white/10" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" fill="none" stroke-width="3"></path>
+<path class="stroke-tertiary-fixed-dim" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" fill="none" stroke-dasharray="85, 100" stroke-linecap="round" stroke-width="3"></path>
+</svg>
+<div class="absolute inset-0 flex items-center justify-center font-bold text-lg" style="">85%</div>
+</div>
+<span class="text-xs font-bold text-center uppercase tracking-tighter" style="">Market Readiness Score</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Sidebar Content -->
+<div class="md:col-span-4 space-y-8">
+<!-- 3. Founder's Dossier -->
+<div class="bg-surface-container-low rounded-xl p-6 border border-outline-variant/10">
+<div class="flex items-center gap-3 mb-6">
+<span class="material-symbols-outlined text-secondary" style="">verified_user</span>
+<h3 class="text-xl font-bold tracking-tight" style="">Founder's Dossier</h3>
+</div>
+<div class="space-y-6">
+<div class="flex items-center gap-4">
+<div class="w-16 h-16 rounded-lg bg-surface-dim flex items-center justify-center overflow-hidden">
+<img alt="Founder profile" class="w-full h-full object-cover grayscale opacity-80" data-alt="Monochrome studio portrait of a visionary technology founder in a minimalist setting, soft professional lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuALoAOiIRn_NqvGzdPVJ5ezhnS0prMBUJWBGdPFdXYoXFY-yri4O7G3WPcitEEmeNgmR5W_Jd0ti6X_p7QF0wBwg43b3Yy3dyj_iR-u2Yhw7RIwq4pfcEK-iPR00m1lVbumTFbsI4CCkXGS67ayxYKTK6oVeoAyBJbsr2upqQvfNIbvpJPVGfk9EUteM9jl6EeEzUtRp6EPFUNdzCp5W1XZ52tUNNt0O6hAlALBZ7ALImuvxwxNS4ZLJoGlX2bP-L9XFyONpmEAhf8x" style="">
+</div>
+<div>
+<h4 class="font-bold text-primary" style="">Anonymous Lead</h4>
+<span class="text-xs bg-tertiary-container text-on-tertiary-container px-2 py-0.5 rounded-md font-bold uppercase tracking-widest" style="">Verified ID</span>
+</div>
+</div>
+<div class="grid grid-cols-2 gap-4">
+<div class="space-y-1">
+<span class="text-[10px] font-bold text-secondary uppercase tracking-widest" style="">Theme</span>
+<p class="text-sm font-semibold" style="">DeepTech / AI</p>
+</div>
+<div class="space-y-1">
+<span class="text-[10px] font-bold text-secondary uppercase tracking-widest" style="">Education</span>
+<p class="text-sm font-semibold" style="">Stanford PhD</p>
+</div>
+</div>
+<div class="bg-white/50 p-4 rounded-lg italic text-sm text-on-surface-variant leading-relaxed" style="">
+                            "A pioneer in distributed systems with over 12 patents in neural network synchronization. Previously led core infrastructure teams at Tier 1 Silicon Valley firms."
+                        </div>
+<div class="pt-4 space-y-3">
+<div class="h-1.5 w-full bg-surface-variant rounded-full overflow-hidden">
+<div class="h-full bg-primary w-[92%]"></div>
+</div>
+<div class="flex justify-between text-[10px] font-bold text-secondary uppercase">
+<span class="" style="">Founder Credibility</span>
+<span class="text-primary" style="">92%</span>
+</div>
+</div>
+</div>
+</div>
+<!-- 4. Interaction & 5. Disclaimer -->
+<div class="space-y-6">
+<button id="contact-btn" class="w-full bg-primary text-on-primary py-5 rounded-md font-bold text-lg hover:opacity-90 transition-all active:scale-[0.98] shadow-xl shadow-primary/10" style="">
+                        Prendre rendez-vous avec le promoteur
+                    </button>
+<div class="p-6 bg-surface-variant/30 rounded-xl border-l-4 border-surface-tint">
+<div class="flex gap-3">
+<span class="material-symbols-outlined text-surface-tint text-[20px]" style="">info</span>
+<div class="space-y-2">
+<h4 class="text-xs font-black uppercase tracking-widest text-primary" style="">Disclaimer Note</h4>
+<p class="text-xs text-on-surface-variant leading-relaxed font-medium" style="">
+                                    Note : Les discussions financières et transactions s'effectuent hors plateforme. L'Algorithmic Atelier agit uniquement en tant qu'interface d'intelligence de marché et de mise en relation.
+                                </p>
+</div>
+</div>
+</div>
+</div>
+<!-- Asset Preview -->
+<div class="rounded-xl overflow-hidden aspect-video relative group cursor-pointer">
+<img alt="Interface preview" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" data-alt="Highly detailed abstract visualization of a neural network grid in deep blue and glowing neon accents, technical editorial style" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAiFpg6rZ9j2IOZvguer0ulfx_ZR0xcNVKijQxcFr9BTdkMDU0tu4-cL2WsDoWKSUVIXIoR6GUdPCGGWcm1TPhBJMiDQOb7o7inIzBPMvArDDDsKkSksbesZuT0xv5llHp7cZ74OqvA7maIWuDesOWxl438OLgZn9U3ib3MWNNrFfQMDASJklZZW0Wwy4C5O3F6qrMwOsKRa52_dKVIg-1tKp8B_zci_qmRYmJtS1rGFJNfOf1WCiOX-inDMlsQVHN_DzvQ02ZRu0Yj" style="">
+<div class="absolute inset-0 bg-gradient-to-t from-primary/80 to-transparent flex items-end p-6">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-white" style="">play_circle</span>
+<span class="text-white text-sm font-bold uppercase tracking-widest" style="">Interface Demo</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Secondary Information Section -->
+<section class="mt-20 pt-20 border-t border-outline-variant/10">
+<h3 class="text-3xl font-black tracking-tighter mb-12" style="">Données de Performance</h3>
+<div class="grid grid-cols-1 md:grid-cols-4 gap-4">
+<div class="bg-surface-container p-6 rounded-lg">
+<span class="text-[10px] font-bold text-secondary uppercase tracking-widest" style="">Score de Risque</span>
+<p class="text-2xl font-black mt-2" style="">B+ <span class="text-sm font-normal text-secondary" style="">(Stable)</span></p>
+</div>
+<div class="bg-surface-container p-6 rounded-lg">
+<span class="text-[10px] font-bold text-secondary uppercase tracking-widest" style="">Validation Tech</span>
+<p class="text-2xl font-black mt-2" style="">98%</p>
+</div>
+<div class="bg-surface-container p-6 rounded-lg">
+<span class="text-[10px] font-bold text-secondary uppercase tracking-widest" style="">Engagement Beta</span>
+<p class="text-2xl font-black mt-2" style="">12k+</p>
+</div>
+<div class="bg-surface-container p-6 rounded-lg">
+<span class="text-[10px] font-bold text-secondary uppercase tracking-widest" style="">IP Status</span>
+<p class="text-2xl font-black mt-2" style="">Déposée</p>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer for Visual Weight -->
+<footer class="bg-surface-container-lowest py-12 px-8 mt-12 border-t border-outline-variant/5">
+<div class="max-w-[1400px] mx-auto flex flex-col md:flex-row justify-between items-center gap-8">
+<div class="flex flex-col gap-2">
+<span class="font-manrope font-black text-lg tracking-tighter text-slate-900" style="">Aeon Slate</span>
+<p class="text-xs text-secondary" style="">The intersection of AI precision and venture capital bespoke intelligence.</p>
+</div>
+<div class="flex gap-8 text-xs font-bold uppercase tracking-widest text-secondary">
+<a class="hover:text-primary" href="#" style="">Termes et Conditions</a>
+<a class="hover:text-primary" href="#" style="">Politique de Confidentialité</a>
+<a class="hover:text-primary" href="#" style="">Contact Intelligence</a>
+</div>
+</div>
+</footer>
+<script src="../js/api.js"></script>
+<script src="../js/project_detail.js"></script>
+</body></html>

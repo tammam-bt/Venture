@@ -1,0 +1,299 @@
+<!DOCTYPE html><html class="light" lang="en"><head>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
+<title>Aeon Slate | Upload Documents</title>
+<!-- Material Symbols -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<!-- Google Fonts -->
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&amp;family=Inter:wght@100..900&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<!-- Tailwind CSS -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+        tailwind.config = {
+          darkMode: "class",
+          theme: {
+            extend: {
+              "colors": {
+                      "primary": "#000000",
+                      "on-tertiary-fixed": "#002113",
+                      "outline-variant": "#c6c6cd",
+                      "on-error-container": "#93000a",
+                      "surface-variant": "#dae2fd",
+                      "on-background": "#131b2e",
+                      "background": "#faf8ff",
+                      "surface-container": "#eaedff",
+                      "primary-fixed-dim": "#b4c5ff",
+                      "outline": "#76777d",
+                      "inverse-on-surface": "#eef0ff",
+                      "surface-container-lowest": "#ffffff",
+                      "error": "#ba1a1a",
+                      "tertiary-fixed": "#6ffbbe",
+                      "on-surface-variant": "#45464d",
+                      "surface-container-low": "#f2f3ff",
+                      "secondary-container": "#d5e3fc",
+                      "on-error": "#ffffff",
+                      "on-primary-fixed": "#00174b",
+                      "surface": "#faf8ff",
+                      "tertiary": "#000000",
+                      "on-secondary": "#ffffff",
+                      "surface-tint": "#0053db",
+                      "secondary-fixed-dim": "#b9c7df",
+                      "inverse-surface": "#283044",
+                      "tertiary-container": "#002113",
+                      "primary-fixed": "#dbe1ff",
+                      "secondary": "#515f74",
+                      "surface-bright": "#faf8ff",
+                      "on-secondary-fixed": "#0d1c2e",
+                      "surface-dim": "#d2d9f4",
+                      "surface-container-highest": "#dae2fd",
+                      "on-tertiary-fixed-variant": "#005236",
+                      "on-secondary-container": "#57657a",
+                      "on-surface": "#131b2e",
+                      "tertiary-fixed-dim": "#4edea3",
+                      "on-primary-fixed-variant": "#003ea8",
+                      "on-primary": "#ffffff",
+                      "surface-container-high": "#e2e7ff",
+                      "error-container": "#ffdad6",
+                      "inverse-primary": "#b4c5ff",
+                      "on-tertiary": "#ffffff",
+                      "on-primary-container": "#497cff",
+                      "primary-container": "#00174b",
+                      "on-tertiary-container": "#009668",
+                      "secondary-fixed": "#d5e3fc",
+                      "on-secondary-fixed-variant": "#3a485b"
+              },
+              "borderRadius": {
+                      "DEFAULT": "0.125rem",
+                      "lg": "0.25rem",
+                      "xl": "0.5rem",
+                      "full": "0.75rem"
+              },
+              "fontFamily": {
+                      "headline": ["Manrope"],
+                      "body": ["Inter"],
+                      "label": ["Inter"]
+              }
+            },
+          },
+        }
+      </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .ghost-border {
+            outline: 1px dashed rgba(198, 199, 205, 0.15);
+            outline-offset: -1px;
+        }
+        .editorial-shadow {
+            box-shadow: 0px 24px 48px -12px rgba(19, 27, 46, 0.06);
+        }
+      </style>
+</head>
+<body class="bg-background font-body text-on-surface antialiased min-h-screen flex flex-col">
+<!-- TopNavBar (Shared Component Integration) -->
+<header class="bg-slate-50/70 dark:bg-slate-950/70 backdrop-blur-[20px] font-['Manrope'] font-bold tracking-tight docked full-width top-0 sticky no-border shadow-none bg-opacity-70 flex justify-between items-center w-full px-8 py-4 max-w-full mx-auto z-50">
+<div class="text-2xl font-black tracking-tighter text-slate-900 dark:text-slate-50" style="">FundBridge</div>
+<nav class="hidden md:flex items-center space-x-8">
+<a class="text-slate-500 dark:text-slate-400 hover:text-slate-800 transition-colors" href="#" style="">Dashboard</a>
+<a class="text-slate-500 dark:text-slate-400 hover:text-slate-800 transition-colors" href="#" style="">Discover</a>
+<a class="text-slate-950 dark:text-white border-b-2 border-slate-950 dark:border-white pb-1" href="#" style="">Portfolio</a>
+<a class="text-slate-500 dark:text-slate-400 hover:text-slate-800 transition-colors" href="#" style="">Resources</a>
+</nav>
+<div class="flex items-center space-x-4">
+<button class="p-2 hover:bg-slate-100/50 dark:hover:bg-slate-800/50 transition-colors rounded-full" style="">
+<span class="material-symbols-outlined text-slate-950 dark:text-slate-50" style="">notifications</span>
+</button>
+<div class="h-8 w-8 rounded-full overflow-hidden bg-surface-container">
+<img alt="User profile" data-alt="close-up portrait of a professional woman with a confident expression in a brightly lit modern office setting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDV0OKu6SBgwuf7BMxJ4syMv0ip-u2jatp1A_uJ6Uz_OBIwIHVLJBBYTPzzf2bzNN4k_l_VpiTp-DZH0vvXviC--eXwygk8MQxrAZ-CHtb-YD-U30vlK6_rNpuYq5wKsVgWAjUGQwdez4SWCmfhBThlvBzt6pz_j22Znic1OYJVE03dSwuO6LnrF_qARfZN0ZmrOVtetTI5BZkeMgjSS01On1LwFzrk6wQbOS5hdGL31tDHOyrRUF3bsER7Kf_V3PefWU6gZMlZ-3ij" class="" style="">
+</div>
+</div>
+</header>
+<main class="flex-grow max-w-4xl mx-auto w-full px-6 py-12">
+<!-- Progress Bar Section -->
+<div class="mb-16">
+<div class="flex items-center justify-between w-full max-w-md mx-auto relative">
+<!-- Step 1: Checked -->
+<div class="flex flex-col items-center z-10">
+<div class="w-8 h-8 rounded-full bg-primary flex items-center justify-center text-on-primary">
+<span class="material-symbols-outlined text-sm" style="">check</span>
+</div>
+</div>
+<!-- Line 1 -->
+<div class="absolute top-4 left-0 w-full h-[2px] bg-surface-container -z-0"></div>
+<div class="absolute top-4 left-0 w-1/2 h-[2px] bg-primary -z-0"></div>
+<!-- Step 2: Active -->
+<div class="flex flex-col items-center z-10">
+<div class="w-8 h-8 rounded-full bg-primary flex items-center justify-center border-4 border-background">
+<div class="w-2 h-2 rounded-full bg-on-primary"></div>
+</div>
+</div>
+<!-- Step 3: Pending -->
+<div class="flex flex-col items-center z-10">
+<div class="w-8 h-8 rounded-full bg-surface-container-highest flex items-center justify-center">
+<div class="w-2 h-2 rounded-full bg-outline-variant"></div>
+</div>
+</div>
+</div>
+<div class="flex justify-between w-full max-w-md mx-auto mt-3 px-2">
+<span class="text-[10px] font-bold font-label text-secondary uppercase tracking-widest" style="">Company</span>
+<span class="text-[10px] font-bold font-label text-primary uppercase tracking-widest" style="">Documents</span>
+<span class="text-[10px] font-bold font-label text-secondary uppercase tracking-widest" style="">Review</span>
+</div>
+</div>
+<!-- Page Header -->
+<div class="mb-12">
+<span class="font-label text-xs font-bold text-secondary tracking-[0.2em] uppercase block mb-3" style="">STEP 1 & 2 OF 3 — PROJECT INFO & DOCUMENTS</span>
+<h1 class="font-headline text-5xl font-extrabold text-on-background tracking-tighter mb-4" style="">Your Venture Profile</h1>
+<p class="font-body text-secondary text-lg max-w-2xl leading-relaxed" style="">
+                Provide the essential details and architectural blueprints of your venture. These documents are encrypted and shared only with verified institutional partners.
+            </p>
+</div>
+<!-- Project Info Fields -->
+<section class="bg-surface-container-low p-10 rounded-xl mb-10">
+<h2 class="font-headline text-2xl font-bold text-on-background mb-8">Project Identity</h2>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+<div class="space-y-2">
+<label class="font-label text-xs font-bold text-secondary tracking-[0.15em] uppercase" for="project-title">Project Title</label>
+<input id="project-title" type="text" class="w-full px-4 py-3 bg-surface-container-lowest border-none focus:ring-1 focus:ring-surface-tint rounded-md outline-none font-body" placeholder="e.g. Lumina Ledger Systems">
+</div>
+<div class="space-y-2">
+<label class="font-label text-xs font-bold text-secondary tracking-[0.15em] uppercase" for="company-name">Company Name</label>
+<input id="company-name" type="text" class="w-full px-4 py-3 bg-surface-container-lowest border-none focus:ring-1 focus:ring-surface-tint rounded-md outline-none font-body" placeholder="e.g. Lumina Inc.">
+</div>
+<div class="space-y-2">
+<label class="font-label text-xs font-bold text-secondary tracking-[0.15em] uppercase" for="industry">Industry / Sector</label>
+<select id="industry" class="w-full px-4 py-3 bg-surface-container-lowest border-none focus:ring-1 focus:ring-surface-tint rounded-md outline-none font-body text-on-surface">
+<option value="">Select sector...</option>
+<option value="FinTech">FinTech</option>
+<option value="HealthTech">HealthTech</option>
+<option value="EdTech">EdTech</option>
+<option value="AgriTech">AgriTech</option>
+<option value="AI/ML">AI / Machine Learning</option>
+<option value="CleanTech">CleanTech / Energy</option>
+<option value="E-Commerce">E-Commerce</option>
+<option value="SaaS">SaaS / B2B</option>
+<option value="DeepTech">DeepTech</option>
+<option value="Other">Other</option>
+</select>
+</div>
+<div class="space-y-2">
+<label class="font-label text-xs font-bold text-secondary tracking-[0.15em] uppercase" for="stage">Stage</label>
+<select id="stage" class="w-full px-4 py-3 bg-surface-container-lowest border-none focus:ring-1 focus:ring-surface-tint rounded-md outline-none font-body text-on-surface">
+<option value="">Select stage...</option>
+<option value="Idea">Idea</option>
+<option value="MVP">MVP</option>
+<option value="Seed">Seed</option>
+<option value="Series A">Series A</option>
+<option value="Series B">Series B</option>
+<option value="Growth">Growth</option>
+</select>
+</div>
+<div class="space-y-2">
+<label class="font-label text-xs font-bold text-secondary tracking-[0.15em] uppercase" for="funding-amount">Funding Request</label>
+<input id="funding-amount" type="text" class="w-full px-4 py-3 bg-surface-container-lowest border-none focus:ring-1 focus:ring-surface-tint rounded-md outline-none font-body" placeholder="e.g. $450,000">
+</div>
+<div class="space-y-2">
+<label class="font-label text-xs font-bold text-secondary tracking-[0.15em] uppercase" for="project-type">Project Type</label>
+<select id="project-type" class="w-full px-4 py-3 bg-surface-container-lowest border-none focus:ring-1 focus:ring-surface-tint rounded-md outline-none font-body text-on-surface">
+<option value="Startup">Startup</option>
+<option value="SME">SME</option>
+<option value="Non-Profit">Non-Profit</option>
+</select>
+</div>
+</div>
+</section>
+<!-- Document Cards Stack -->
+<div class="space-y-6">
+<!-- Card 1: Pitch Deck -->
+<div class="bg-surface-container-low p-8 rounded-xl flex flex-col md:flex-row gap-8 items-center justify-between">
+<div class="flex-1 space-y-3">
+<div class="flex items-center gap-3">
+<h3 class="font-headline text-xl font-bold text-on-background" style="">Pitch Deck</h3>
+<span class="bg-surface-variant text-on-primary-fixed text-[10px] font-black px-2 py-1 rounded-full uppercase tracking-wider" style="">Required</span>
+</div>
+<p class="font-body text-sm text-secondary leading-snug" style="">The core narrative of your business, market opportunity, and vision for the next 5 years.</p>
+</div>
+<input type="file" id="file-pitch_deck" accept=".pdf" class="hidden">
+<div class="w-full md:w-80 group cursor-pointer upload-zone" data-file-key="pitch_deck">
+<div class="bg-surface-container-lowest ghost-border rounded-lg p-6 flex flex-col items-center justify-center transition-all hover:bg-white editorial-shadow border border-transparent hover:border-surface-tint">
+<span class="material-symbols-outlined text-outline-variant mb-2 text-3xl group-hover:text-surface-tint transition-colors" style="">cloud_upload</span>
+<span class="upload-label font-label text-xs font-semibold text-secondary group-hover:text-on-background" style="">Drop PDF or browse</span>
+<span class="font-label text-[10px] text-outline mt-1" style="">Max 25MB</span>
+</div>
+</div>
+</div>
+<!-- Card 2: Financial Model -->
+<div class="bg-surface-container-low p-8 rounded-xl flex flex-col md:flex-row gap-8 items-center justify-between">
+<div class="flex-1 space-y-3">
+<div class="flex items-center gap-3">
+<h3 class="font-headline text-xl font-bold text-on-background" style="">Financial Model</h3>
+<span class="bg-surface-variant text-on-primary-fixed text-[10px] font-black px-2 py-1 rounded-full uppercase tracking-wider" style="">Required</span>
+</div>
+<p class="font-body text-sm text-secondary leading-snug" style="">Detailed P&amp;L projections, burn rate analysis, and unit economics.</p>
+</div>
+<input type="file" id="file-financials" accept=".pdf,.xls,.xlsx,.csv" class="hidden">
+<div class="w-full md:w-80 group cursor-pointer upload-zone" data-file-key="financials">
+<div class="bg-surface-container-lowest ghost-border rounded-lg p-6 flex flex-col items-center justify-center transition-all hover:bg-white editorial-shadow border border-transparent hover:border-surface-tint">
+<span class="material-symbols-outlined text-outline-variant mb-2 text-3xl group-hover:text-surface-tint transition-colors" style="">table_chart</span>
+<span class="upload-label font-label text-xs font-semibold text-secondary group-hover:text-on-background" style="">Drop PDF/XLS or browse</span>
+<span class="font-label text-[10px] text-outline mt-1" style="">Detailed projections</span>
+</div>
+</div>
+</div>
+<!-- Card 3: Executive Summary -->
+<div class="bg-surface-container-low p-8 rounded-xl flex flex-col md:flex-row gap-8 items-center justify-between">
+<div class="flex-1 space-y-3">
+<div class="flex items-center gap-3">
+<h3 class="font-headline text-xl font-bold text-on-background" style="">Executive Summary</h3>
+<span class="bg-surface-container text-secondary text-[10px] font-black px-2 py-1 rounded-full uppercase tracking-wider" style="">Optional</span>
+</div>
+<p class="font-body text-sm text-secondary leading-snug" style="">A high-level one-pager summarizing the key investment highlights for quick review.</p>
+</div>
+<div class="w-full md:w-80 group cursor-pointer">
+<div class="bg-surface-container-lowest ghost-border rounded-lg p-6 flex flex-col items-center justify-center transition-all hover:bg-white editorial-shadow border border-transparent hover:border-surface-tint">
+<span class="material-symbols-outlined text-outline-variant mb-2 text-3xl group-hover:text-surface-tint transition-colors" style="">description</span>
+<span class="font-label text-xs font-semibold text-secondary group-hover:text-on-background" style="">Drop PDF or browse</span>
+<span class="font-label text-[10px] text-outline mt-1" style="">One-page summary</span>
+</div>
+</div>
+</div>
+<!-- Card 4: Business Plan -->
+<div class="bg-surface-container-low p-8 rounded-xl flex flex-col md:flex-row gap-8 items-center justify-between">
+<div class="flex-1 space-y-3">
+<div class="flex items-center gap-3">
+<h3 class="font-headline text-xl font-bold text-on-background" style="">Business Plan</h3>
+<span class="bg-surface-container text-secondary text-[10px] font-black px-2 py-1 rounded-full uppercase tracking-wider" style="">Optional</span>
+</div>
+<p class="font-body text-sm text-secondary leading-snug" style="">The comprehensive operational roadmap and deep dive into organizational structure.</p>
+</div>
+<div class="w-full md:w-80 group cursor-pointer">
+<div class="bg-surface-container-lowest ghost-border rounded-lg p-6 flex flex-col items-center justify-center transition-all hover:bg-white editorial-shadow border border-transparent hover:border-surface-tint">
+<span class="material-symbols-outlined text-outline-variant mb-2 text-3xl group-hover:text-surface-tint transition-colors" style="">book</span>
+<span class="font-label text-xs font-semibold text-secondary group-hover:text-on-background" style="">Drop PDF or browse</span>
+<span class="font-label text-[10px] text-outline mt-1" style="">Full documentation</span>
+</div>
+</div>
+</div>
+</div>
+</main>
+<!-- Bottom Bar Navigation -->
+<footer class="sticky bottom-0 bg-background/80 backdrop-blur-md border-t border-outline-variant/10 py-6 px-8 mt-auto z-40">
+<div class="max-w-4xl mx-auto flex justify-between items-center">
+<button class="flex items-center gap-2 px-6 py-3 rounded-md font-label text-sm font-bold text-secondary bg-transparent hover:bg-surface-container-low transition-all" onclick="window.location.href='../accueil_authentification_2/code.html'" style="">
+<span class="material-symbols-outlined text-sm" style="">arrow_back_ios</span>
+                Back
+            </button>
+<div class="flex items-center gap-6">
+<p class="hidden md:block font-label text-[10px] text-outline uppercase tracking-widest" style="">Files will be submitted to AI for evaluation</p>
+<button id="next-step-btn" class="bg-primary text-on-primary px-10 py-3 rounded-md font-label text-sm font-bold shadow-lg hover:opacity-90 active:scale-[0.98] transition-all" style="">Next Step</button>
+</div>
+</div>
+</footer>
+<!-- Decorative Elements (Asymmetric) -->
+<div class="fixed top-1/4 -right-20 w-96 h-96 bg-primary-fixed/10 rounded-full blur-[120px] pointer-events-none -z-10"></div>
+<div class="fixed bottom-0 -left-20 w-64 h-64 bg-secondary-fixed/10 rounded-full blur-[80px] pointer-events-none -z-10"></div>
+<script src="../js/api.js"></script>
+<script src="../js/upload.js"></script>
+</body></html>
